@@ -7,7 +7,7 @@
 Summary:	Command Line Interface Formulation Framework
 Name:		python-cliff
 Version:	2.8.0
-Release:	5
+Release:	6
 License:	Apache
 Group:		Libraries/Python
 Source0:	https://pypi.python.org/packages/9e/26/7db86b6fb7bcf335e691a274b8f5141006ea87e7783e43d7ef5a498a09da/cliff-%{version}.tar.gz
