@@ -9,7 +9,7 @@ Summary(pl.UTF-8):	Command Line Interface Formulation Framework - szkielet formu
 Name:		python-cliff
 # keep 2.x here for python2 support
 Version:	2.18.0
-Release:	3
+Release:	4
 License:	Apache
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/c/cliff/cliff-%{version}.tar.gz
