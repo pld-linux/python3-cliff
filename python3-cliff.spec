@@ -7,12 +7,12 @@
 Summary:	Command Line Interface Formulation Framework
 Summary(pl.UTF-8):	Command Line Interface Formulation Framework - szkielet formułowania linii poleceń
 Name:		python3-cliff
-Version:	4.9.1
+Version:	4.10.0
 Release:	1
 License:	Apache
 Group:		Libraries/Python
 Source0:	https://files.pythonhosted.org/packages/source/c/cliff/cliff-%{version}.tar.gz
-# Source0-md5:	7f6a2a8046eb190aaaff1adf5fed2f27
+# Source0-md5:	084aa6bc49a6c0d574de30ab60218b1a
 URL:		https://pypi.org/project/cliff/
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -53,10 +53,13 @@ funkcje formatujące wyjścia i inne rozszerzenia.
 
 %build
 export PYTHON="%{__python3}"
-%py3_build %{?with_tests:test}
+%py3_build
 
 %if %{with tests}
-%{__rm} -r .testrepository
+# use explicit plugins list for reliable builds (delete PYTEST_PLUGINS if empty)
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
+PYTEST_PLUGINS= \
+%{__python3} -m pytest build-3
 %endif
 
 %install
